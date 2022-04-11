@@ -38,7 +38,8 @@
 
 <script>
    $(document).ready(function() {
-      ProcesosClientes.initCliente()
+      
+      ProcesosClientes.initCliente(url)
       $(".crear").click(function() {
          $(".modal-title").html("Crear Nuevo Cliente");
          $(".modal-header").css({

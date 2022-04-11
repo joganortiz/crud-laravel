@@ -24,14 +24,14 @@
         event.preventDefault()
         var formData = new FormData(document.getElementById("formLogin"));
         let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        let ajaxUrl = '/login';
+        let ajaxUrl = url + '/login';
         request.open("POST", ajaxUrl, true);
         request.send(formData);
         request.onreadystatechange = function() {
             if (request.readyState == 4 && request.status == 200) {
                 let objData = JSON.parse(request.responseText);
                 if (objData.status == 200) {
-                    window.location = '/cliente/listar'
+                    window.location = 'cliente/listar'
                 } else {
                     swal({
                         title: objData.titulo,
@@ -69,7 +69,7 @@
         event.preventDefault()
         var formData = new FormData(document.getElementById("formRegistro"));
         let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        let ajaxUrl = '/crearUsuario';
+        let ajaxUrl = url + '/crearUsuario';
         request.open("POST", ajaxUrl, true);
         request.send(formData);
         request.onreadystatechange = function() {

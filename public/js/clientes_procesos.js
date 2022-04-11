@@ -10,7 +10,7 @@ var ProcesosClientes = {
             "responsive": !0,
             order: [],
             "ajax": {
-                "url": "/listarClientes",
+                "url": url + '/listarClientes',
                 "dataSrc": ""
             },
             "columns": [
@@ -77,7 +77,7 @@ var ProcesosClientes = {
                     formData.append("_token", $("input[name=_token]").val())
 
                     let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-                    let ajaxUrl = "/eliminarCliente"
+                    let ajaxUrl = "eliminarCliente"
                         // let strData = "id_cliente=" + id;
                     request.open("POST", ajaxUrl, true);
                     request.send(formData);
@@ -135,7 +135,7 @@ var ProcesosClientes = {
         self = this
         if (id != '') {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = "/listarCliente/" + id
+            let ajaxUrl = url + "/listarCliente/" + id
                 // let strData = "id_cliente=" + id;
             request.open("GET", ajaxUrl, true);
             request.send();
@@ -172,7 +172,7 @@ var ProcesosClientes = {
             var formData = new FormData(document.getElementById("procesoCliente"));
 
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = '/crearCliente';
+            let ajaxUrl = url + '/crearCliente';
             request.open("POST", ajaxUrl, true);
             request.send(formData);
             request.onreadystatechange = function() {
@@ -222,7 +222,7 @@ var ProcesosServicios = {
     TraerNombreCliente: function() {
         var id_cliente = $("input[name=id_cliente]").val();
         let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        let ajaxUrl = "/listarCliente/" + id_cliente
+        let ajaxUrl = url + "/listarCliente/" + id_cliente
         request.open("GET", ajaxUrl, true);
         request.send();
         request.onreadystatechange = function() {
@@ -243,7 +243,7 @@ var ProcesosServicios = {
             "responsive": !0,
             order: [],
             "ajax": {
-                "url": "/listarServicios/" + id_cliente,
+                "url": url + "/listarServicios/" + id_cliente,
                 "dataSrc": ""
             },
             "columns": [
@@ -292,7 +292,7 @@ var ProcesosServicios = {
                     formData.append("_token", $("input[name=_token]").val())
 
                     let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-                    let ajaxUrl = "/eliminarServicio"
+                    let ajaxUrl = url + "/eliminarServicio"
                         // let strData = "id_cliente=" + id;
                     request.open("POST", ajaxUrl, true);
                     request.send(formData);
@@ -328,7 +328,7 @@ var ProcesosServicios = {
     ListarServicio: function(id) {
         if (id != '') {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = "/listarServicio/" + id
+            let ajaxUrl = url + "/listarServicio/" + id
                 // let strData = "id_cliente=" + id;
             request.open("GET", ajaxUrl, true);
             request.send();
@@ -356,7 +356,7 @@ var ProcesosServicios = {
             var formData = new FormData(document.getElementById("procesoServicio"));
 
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = '/crearEditarServicio';
+            let ajaxUrl = url + '/crearEditarServicio';
             request.open("POST", ajaxUrl, true);
             request.send(formData);
             request.onreadystatechange = function() {

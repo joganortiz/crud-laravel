@@ -40,7 +40,7 @@ Route::get('/cliente/listar', function () {
 Route::get('/cliente/{id}/servicios', function () {
     if (session('logueado')) {
         $datos = explode('/', Request::fullUrl());
-        $var = $datos[4];
+        $var = (is_numeric($datos[4]))? $datos[4]: $datos[6];
         return view('cliente.services')->with('id', $var);
     } else {
         return redirect()->to('/')->send();

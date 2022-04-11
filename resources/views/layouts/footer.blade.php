@@ -9,7 +9,10 @@
 
  <script src="{{ asset('sweetalert2/sweetalert2.min.js') }}"></script>
  <script src="{{ asset('js/clientes_procesos.js') }}"></script>
- 
+
+ <script>
+    let url = "<?php echo  url('/'); ?>"
+ </script>
  </body>
 
  </html>
